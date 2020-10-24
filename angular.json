@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Pronowpush"
+    }
+  },
+  "defaultProject": "Pronowpush",
+  "cli": {
+    "analytics": false
+  }
 }
