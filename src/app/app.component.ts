@@ -28,6 +28,7 @@ export class AppComponent {
       stripeToken: token.id,
       name: user.username,
       amount: user.amount,
+      plan_type: user.plantype,
       description: user.description
     }
     console.log("Stripe Token : ", stripedata)
@@ -40,12 +41,12 @@ export class AppComponent {
       })
   }
 
-  checkregister(email) {
+  checkregister(email, pay) {
     this.UserServiceService.getUserByemail(email)
       .subscribe(data => {
         if (data.data.length != 0) {
           // alert(data.isError)
-          this.pay(24, data.data[0]);
+          this.pay(pay, data.data[0]);
           console.log("token : ", this.token);
         }
         else {
@@ -67,6 +68,12 @@ export class AppComponent {
         console.log("token : ", this.token);
         user.amount = amount * 100;
         user.description = "Now Push Pro";
+        if (amount == "3") {
+          user.plantype = "monthly"
+        }
+        else {
+          user.plantype = "yearly"
+        }
         this.gotopro(token, user);
       }
     });

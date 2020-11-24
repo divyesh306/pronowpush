@@ -50,21 +50,23 @@
             <!-- Plan Description -->
             <div class="plan-description">
               <ul class="plan-features">
-                <li class="border-top py-3">End to End Encryption</li>
-                <li class="border-top py-3">Unlimited Devices</li>
+                <li class="border-top py-3">ALL FREE Tier Features</li>
                 <li class="border-top py-3">Unlimited Public & Private Threads</li>
-                <li class="border-top py-3">Remind Me Scheduling Notifications</li>
+                <li class="border-top py-3">Create Reminder Notifications</li>
                 <li class="border-top border-bottom py-3">Up to 1GB File Sharing</li>
-                <li class="border-top border-bottom py-3">Universal Copy Paste</li>
+                <li class="border-top border-bottom py-3">Universal Copy & Paste</li>
+                <li class="border-top border-bottom py-3">Get All New Features First</li>
+                <li class="border-top border-bottom py-3">Support Now Push Development</li>
               </ul>
             </div>
             <!-- Plan Button -->
             <div class="plan-button">
-              <!-- <a href="#" class="btn btn-info mt-4" (click)="pay(24)">
-                <h3 class="color-primary">Pay <small class="fw-7">€</small>24</h3>
-              </a> -->
-              <button type="button" class="btn btn-info mt-4" data-toggle="modal" data-target="#myModal">
-                <h3 class="color-primary">Pay <small class="fw-7">€</small>24</h3>
+              <!-- <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-info mt-4"
+                (click)="pay(3)">
+                <h3 class="color-primary">Pay <small class="fw-7">$</small>3 / Monthly</h3>
+              </button> -->
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                Pay For Pro
               </button>
             </div>
           </div>
@@ -81,14 +83,19 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Enter Register Email</h4>
-          <button type="button" class="close"  data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <input type="email" class="form-control" name="userEmail" [(ngModel)]="userEmail" placeholder="Enter Your Register Email id"
-          (blur)="checkregister(userEmail)">
+          <input type="email" class="form-control" name="userEmail" [(ngModel)]="userEmail"
+            placeholder="Enter Your Register Email id">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" (click)="checkregister(userEmail,3)">
+            Pay $3 For Monthly
+          </button>
+          <button type="button" class="btn btn-success" (click)="checkregister(userEmail,29)">
+            Pay $29 For Yearly
+          </button>
         </div>
       </div>
     </div>
